@@ -1,0 +1,41 @@
+// this is building a front-end for the todo list:
+// 
+
+
+
+
+
+
+
+//map:
+// ToDoItem(x)
+
+
+
+import React, { Component } from 'react'
+
+export default class ToDoItem extends Component {
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////
