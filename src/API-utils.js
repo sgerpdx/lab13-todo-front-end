@@ -1,24 +1,21 @@
 import request from 'superagent';
 
-const URL = 'https://localhost:3000'; //this is the API URL
-
-// export function signupUser(email, password) {
-//     const response = await request.post(`${URL}/auth/signup`)
-//         .send({ email: email, password: password })
-//     //JS allows if key and value names are same: ({ email, password })
-
-//     return response.body;
-
-// }
-
-// export function loginUser(email, password) {
-//     const response = await request.post(`${URL}/auth/signin`)
-//         .send({ email: email, password: password })
+const URL = 'http://localhost:3000'; //this is the API URL
 
 
-//     return response.body;
+export async function signupUser(email, password) {
+    const response = await request.post(`${URL}/auth/signup`)
+        .send({ email: email, password: password, name: 'Sam' })
+    //JS allows if key and value names are same: ({ email, password })
+    return response.body;
+}
 
-// }
+
+export async function loginUser(email, password) {
+    const response = await request.post(`${URL}/auth/signin`)
+        .send({ email: email, password: password, name: 'Sam' })
+    return response.body;
+}
 
 
 // export function createToDo(todo, token) {

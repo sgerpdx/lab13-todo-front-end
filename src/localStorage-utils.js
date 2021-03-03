@@ -3,7 +3,7 @@ import { USER } from './App.js';
 export function getUserFromLocalStorage() {
     const user = localStorage.getItem(USER);
 
-    if (user) {
+    if (user && user.token) {
         return JSON.parse(user);
     } else {
         return {
@@ -15,6 +15,8 @@ export function getUserFromLocalStorage() {
     }
 }
 
-export function putUserInLocalStorage() {
-    //this goes into handleUserChange in App.js...and contains here the 'setItem'
+export function putUserInLocalStorage(user) {
+
+
+    localStorage.setItem(USER, JSON.stringify(user));
 }
