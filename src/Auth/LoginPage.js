@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import request from 'superagent'
 import { loginUser } from '../API-utils.js'
 
 export default class LoginPage extends Component {

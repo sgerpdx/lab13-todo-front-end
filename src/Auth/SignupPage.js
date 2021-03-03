@@ -1,5 +1,4 @@
 import React from 'react'
-//import request from 'superagent'
 import { signupUser } from '../API-utils.js'
 
 export default class SignupPage extends React.Component {
@@ -50,18 +49,3 @@ export default class SignupPage extends React.Component {
         )
     }
 }
-
-//signup:
-//{"id":3,"email":"moon@moon.com","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjE0NzM2NDExfQ.Qd4oqI6WZiFc5Ykf5nvdCSkwwEwxxV9QwzLmesCkgAY"}
-//signin:
-//{"id":3,"email":"moon@moon.com","name":"Sam","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjE0NzM2ODk5fQ.sdduND6DjHGA_RBFUNdLr-haFrdX3xjs0tCu_4x60wM"}
-
-// email: "sweet@cool.com"
-// id: 4
-// token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjE0Nzc1NDc1fQ.eAMKEJjwhgwv0eV02T7G4e2onlM_imS7jz6ld0gk9tI"
-
-
-
-
-
-

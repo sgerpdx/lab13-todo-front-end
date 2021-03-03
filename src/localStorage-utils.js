@@ -11,7 +11,6 @@ export function getUserFromLocalStorage() {
             email: '',
             token: ''
         }
-        //we'll likely not use this, but it's good to be safe (to have an {} to return)
     }
 }
 

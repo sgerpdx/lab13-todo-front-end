@@ -17,11 +17,6 @@ export default class App extends React.Component {
   state = {
     user: getUserFromLocalStorage()
 
-    // user: {
-    //   id: '',
-    //   email: '',
-    //   token: ''
-    // }
   }
 
 
@@ -63,11 +58,6 @@ export default class App extends React.Component {
               token={this.state.user && this.state.user.token} //PrivateRoute component says that this is to redirect to LoginPage
               render={(routerProps) => <ToDosList user={this.state.user} {...routerProps} />}
             />
-            {/* <Route
-              path="/plans/:id"
-              exact
-              render={(routerProps) => <ToDoItem {...routerProps} />}
-            /> */}
             <Route
               path="/create"
               exact
@@ -80,16 +70,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
-
-// email: "major@cool.com"
-// id: 5
-// token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjE0Nzc2MDAxfQ.jCEGEwhNSuAfnbTxys19lfuBaeO7IhkTXaODNUgyz0s"
-
-
-
-
-
-
-

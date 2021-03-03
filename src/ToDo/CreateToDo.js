@@ -24,7 +24,7 @@ export default class CreateToDo extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         await makeToDo(this.state.plan, this.props.user.token);
-        this.props.history.push('/api/plans');
+        this.props.history.push('/plans');
     }
 
 

@@ -4,9 +4,6 @@ import './Header.css'
 
 
 export default class Header extends React.Component {
-    // state = {
-    //     email: ''
-    // }
 
 
     render() {

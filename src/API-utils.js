@@ -35,15 +35,6 @@ export async function completeToDo(todoId, token) {
     return response.body;
 }
 
-// this is approximately what the 'fetchPlans' function declared at the top of ToDosList.js is for:
-
-// export async function getAllToDos(token) {
-//     const response = await request
-//         .get(`${URL}/api/plans`)
-//         .set('Authorization', token)
-//     return response.body;
-// }
-
 export async function getAllPlans(token) {
     const response = await request.get(`${URL}/api/plans`)
         .set('Authorization', token)
