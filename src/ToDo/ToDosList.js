@@ -1,26 +1,49 @@
 import React, { Component } from 'react'
+import './ToDos.css';
+//import { getAllPlans } from '../API-utils';
 //import { getTodos } from '../api-utils.js';
+import request from 'superagent';
+
+const URL = 'http://localhost:3000'; //this is the API URL
+
+const fetchPlans = async () => {
+    const response = await request.get(`${URL}/plans`);
+    return response.body;
+}
 
 export default class ToDosList extends Component {
-    // state = {
-    //     todos: [], //so that we can map over it
-    //     todo: ''
-    // }
+    state = {
+        plans: [], //so that we can map over it
+        plan: ''
+    }
 
-    // //if no token, redirect:
+    //if no token, redirect:
 
 
-    // componentDidMount = () => {
-    //     const todos = await getTodos(this.props.user.token);
 
-    //     this.setState({ todos: todos });
+
+    componentDidMount = async () => {
+        const plans = await fetchPlans();
+        this.setState({ plans: plans });
+    }
+
+
+
+
+
+
+    // componentDidMount = async () => {
+    //     const plans = await getAllPlans();
+    //     //const plans = fetchPlans();
+    //     //const plans = await fetchPlans(this.props.user.token);
+
+    //     this.setState({ plans: plans });
     //     //validate fetch: logout todos in render() ...or... Network tab
     // }
 
-    // fetchToDos = async () => {
-    //     const todos = await getAllToDos(this.props.user.token);
-
-    //     this.setState({ todos });
+    // fetchPlans = async () => {
+    //     await getAllPlans();
+    //     //const plans = await getAllPlans(this.props.user.token);
     // }
 
 
@@ -49,6 +72,15 @@ export default class ToDosList extends Component {
     // }
     // pass in something as argument in
 
+    completedCheck(done) {
+        if (done === true) {
+            return 'yes';
+        } else {
+            return 'no';
+        }
+    }
+
+
     render() {
         // console.log(this.props); //this will show user, which is the prop?
         // console.log(this.todos);
@@ -58,6 +90,15 @@ export default class ToDosList extends Component {
 
             <div>
                 Here is your list of To-Dozzzz
+                <div className="planArea">
+                    {this.state.plans.map(plan =>
+                        <div className="planUnit" key={plan.id}>
+                            <p>to do:{plan.todo}</p>
+                            <p>done? {this.completedCheck(plan.completed)}</p>
+                        </div>
+                    )}
+                </div>
+
                 {/* <div>
                     <input value={this.state.todo} onChange={this.handleTodoChange} />
                     <button>Create a New ToDo</button>
@@ -72,6 +113,8 @@ export default class ToDosList extends Component {
                 {JSON.stringify(this.props.user)} */}
 
             </div>
+
+
         )
     }
 }

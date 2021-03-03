@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 //import request from 'superagent'
 //import { completeToDo, createToDo, getAllToDos } from './API-utils.js'
 
 export default class SignupPage extends React.Component {
-    // state = {
-    //     email: '',
-    //     password: ''
-    // }
+    state = {
+        email: '',
+        password: ''
+    }
 
 
-    // handleEmailChange = (e) => this.setState({
-    //     email: e.target.value
-    // });
+    handleEmailChange = (e) => this.setState({
+        email: e.target.value
+    });
 
-    // handlePasswordChange = (e) => this.setState({
-    //     password: e.target.value
-    // });
+    handlePasswordChange = (e) => this.setState({
+        password: e.target.value
+    });
 
     // handleSubmit = (e) => {
     //     e.preventDefault();
@@ -35,14 +35,21 @@ export default class SignupPage extends React.Component {
 
         return (
             <div>
-                Sign Up for Planning
-                {/* <label>
-                    <input value={this.state.email} onChange={this.handleEmailChange} />
-                </label>
+                <form>
+                    Sign Up for Planning:
                 <label>
-                    <input value={this.state.password} onChange={this.handlePasswordChange} />
-                </label>
-                <button>Submit Plan</button> */}
+                        Email
+                    <input />
+                        <input value={this.state.email} onChange={this.handleEmailChange} />
+                    </label>
+                    <label>
+                        Password
+                <input />
+                        <input value={this.state.password} onChange={this.handlePasswordChange} />
+                    </label>
+                    <button>Submit Plan</button>
+                </form>
+
 
             </div>
         )

@@ -1,0 +1,13 @@
+.planArea {
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.planUnit {
+    border: solid 1px black;
+    padding: 5px;
+    color: white;
+    margin: 10px;
+}
