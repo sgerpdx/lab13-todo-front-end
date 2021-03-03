@@ -3,6 +3,7 @@ import './ToDos.css'
 //import { getAllPlans } from '../API-utils';
 //import { getTodos } from '../api-utils.js';
 import request from 'superagent';
+import { makeToDo, completeToDo } from '../API-utils.js'
 
 const URL = 'http://localhost:3000'; //this is the API URL
 
@@ -14,22 +15,14 @@ const fetchPlans = async () => {
 export default class ToDosList extends Component {
     state = {
         plans: [], //so that we can map over it
-        plan: ''
+        todo: ''
     }
-
-    //if no token, redirect:
-
-
 
 
     componentDidMount = async () => {
         const plans = await fetchPlans();
         this.setState({ plans: plans });
     }
-
-
-
-
 
 
     // componentDidMount = async () => {
@@ -47,30 +40,26 @@ export default class ToDosList extends Component {
     // }
 
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     createToDo(this.state.tod, this.props.user.token);
-
-    //     await this.fetchToDos();
-
-    //     this.setState({ todo: '' }); //this resets state of input to empty string after Submit
-
-    // }
+    handleSubmit = async (e) => {
+        e.preventDefault();
+        makeToDo(this.state.todo, this.props.user.token);
+        await this.fetchPlans();
+        this.setState({ todo: '' }); //this resets state of input to empty string after Submit
+    }
 
 
 
-    // handleToDoChange = (e) => {
-    //     this.setState({ todo: e.target.value }); ///work on norming this syntax
-    // }
+    handleToDoChange = (e) => {
+        this.setState({ todo: e.target.value }); ///work on norming this syntax
+    }
 
 
-    // handleComplete = () => {
-    //     await completeToDo(  , this.props.user.token);
+    handleComplete = async (todoId) => {
+        await completeToDo(todoId, this.props.user.token);
+        this.fetchToDos();
+    }
 
-    //     this.fetchToDos();
-    // }
-    // pass in something as argument in
+
 
     completedCheck(done) {
         if (done === true) {

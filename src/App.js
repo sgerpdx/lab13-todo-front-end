@@ -71,7 +71,8 @@ export default class App extends React.Component {
             <Route
               path="/create"
               exact
-              render={(routerProps) => <CreateToDo {...routerProps} />}
+              token={this.state.user && this.state.user.token}
+              render={(routerProps) => <CreateToDo user={this.state.user} {...routerProps} />}
             />
           </Switch>
         </Router>
@@ -79,3 +80,16 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+
+// email: "major@cool.com"
+// id: 5
+// token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjE0Nzc2MDAxfQ.jCEGEwhNSuAfnbTxys19lfuBaeO7IhkTXaODNUgyz0s"
+
+
+
+
+
+
+

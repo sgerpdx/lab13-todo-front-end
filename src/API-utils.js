@@ -18,34 +18,28 @@ export async function loginUser(email, password) {
 }
 
 
-// export function createToDo(todo, token) {
-//     const response = await request
-//         .post(`${URL}/api/todos`)
-//         .set('Authorization', token)
-//         .send({ todo })
+export async function makeToDo(plan, token) {
+    const response = await request
+        .post(`${URL}/api/plans`)
+        .set('Authorization', token)
+        .send({ plan })
+    return response.body;
+}
 
 
-//     return response.body;
+export async function completeToDo(todoId, token) {
+    const response = await request
+        .put(`${URL}/api/plans${todoId}`)
+        .set('Authorization', token)
+    return response.body;
+}
 
-// }
-
-
-// export function completeToDo(todoId, token) {
-//     const response = await request
-//         .put(`${URL}/api/todos${todoId}`)
-//         .set('Authorization', token)
-
-
-//     return response.body;
-
-// }
-
+// this is approximately what the 'fetchPlans' function declared at the top of ToDosList.js is for:
 
 // export async function getAllToDos(token) {
 //     const response = await request
 //         .get(`${URL}/api/plans`)
 //         .set('Authorization', token)
-
 //     return response.body;
 // }
 
