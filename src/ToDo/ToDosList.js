@@ -5,7 +5,7 @@ import './ToDos.css'
 import request from 'superagent';
 import { makeToDo, completeToDo } from '../API-utils.js'
 
-const URL = 'http://localhost:3000'; //this is the API URL
+const URL = 'https://planets-auth.herokuapp.com'; //this is the API URL
 
 const fetchPlans = async () => {
     const response = await request.get(`${URL}/plans`);

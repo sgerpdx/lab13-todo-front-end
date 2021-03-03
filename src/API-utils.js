@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const URL = 'http://localhost:3000'; //this is the API URL
+const URL = 'https://planets-auth.herokuapp.com'; //this is the API URL
 
 
 export async function signupUser(email, password) {
