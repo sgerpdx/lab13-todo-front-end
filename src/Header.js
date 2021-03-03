@@ -14,6 +14,9 @@ export default class Header extends React.Component {
                 <NavLink exact activeClassName="selected" to="/plans">
                     <button className="navButton">Plans</button>
                 </NavLink>
+                <NavLink exact activeClassName="selected" to="/create">
+                    <button className="navButton">Create Plan</button>
+                </NavLink>
                 <p className="titleArea">Things To-Do</p>
                 <NavLink exact activeClassName="selected" to="/signup">
                     <button className="navButton">Signup Page</button>

@@ -7,7 +7,7 @@ import Header from './Header.js';
 import LoginPage from './Auth/LoginPage.js';
 import SignupPage from './Auth/SignupPage.js';
 import ToDosList from './ToDo/ToDosList.js';
-//import CreateToDo from './ToDo-files/CreateToDo.js';
+import CreateToDo from './ToDo/CreateToDo.js';
 import { getUserFromLocalStorage, putUserInLocalStorage } from './localStorage-utils.js';
 
 export const USER = 'USER';
@@ -68,11 +68,11 @@ export default class App extends React.Component {
               exact
               render={(routerProps) => <ToDoItem {...routerProps} />}
             /> */}
-            {/* <Route
+            <Route
               path="/create"
               exact
               render={(routerProps) => <CreateToDo {...routerProps} />}
-            /> */}
+            />
           </Switch>
         </Router>
       </div>
