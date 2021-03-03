@@ -19,10 +19,11 @@ export async function loginUser(email, password) {
 
 
 export async function makeToDo(plan, token) {
+    console.log(plan.todo, 'make a plan'); //key change?
     const response = await request
         .post(`${URL}/api/plans`)
         .set('Authorization', token)
-        .send({ plan })
+        .send({ todo: plan.todo, completed: plan.completed }) //in more detail
     return response.body;
 }
 
@@ -43,7 +44,8 @@ export async function completeToDo(todoId, token) {
 //     return response.body;
 // }
 
-export async function getAllPlans() {
-    const response = await request.get(`${URL}/plans`);
+export async function getAllPlans(token) {
+    const response = await request.get(`${URL}/api/plans`)
+        .set('Authorization', token)
     return response.body;
 }

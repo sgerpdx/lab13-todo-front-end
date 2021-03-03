@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import HomePage from './Home/HomePage.js';
-//import PrivateRoute from './PrivateRoute.js';
+import PrivateRoute from './PrivateRoute.js';
 import Header from './Header.js';
 import LoginPage from './Auth/LoginPage.js';
 import SignupPage from './Auth/SignupPage.js';
@@ -57,8 +57,8 @@ export default class App extends React.Component {
               exact
               render={(routerProps) => <SignupPage handleUserChange={this.handleUserChange} {...routerProps} />}
             />
-            <Route //PrivateRoute
-              path="/plans"
+            <PrivateRoute //PrivateRoute
+              path="/api/plans"
               exact
               token={this.state.user && this.state.user.token} //PrivateRoute component says that this is to redirect to LoginPage
               render={(routerProps) => <ToDosList user={this.state.user} {...routerProps} />}

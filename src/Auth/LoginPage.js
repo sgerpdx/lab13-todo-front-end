@@ -22,7 +22,7 @@ export default class LoginPage extends Component {
         e.preventDefault();
         const user = await loginUser(this.state.email, this.state.password);
         this.props.handleUserChange(user); //this lets us pass the user/token 'up' to the parent (App)
-        this.props.history.push('/plans');
+        this.props.history.push('/api/plans');
     }
 
 

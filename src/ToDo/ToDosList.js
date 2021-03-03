@@ -3,14 +3,14 @@ import './ToDos.css'
 //import { getAllPlans } from '../API-utils';
 //import { getTodos } from '../api-utils.js';
 import request from 'superagent';
-import { makeToDo, completeToDo } from '../API-utils.js'
+import { makeToDo, completeToDo, getAllPlans } from '../API-utils.js'
 
 const URL = 'https://planets-auth.herokuapp.com'; //this is the API URL
 
-const fetchPlans = async () => {
-    const response = await request.get(`${URL}/plans`);
-    return response.body;
-}
+// const fetchPlans = async () => {
+//     const response = await request.get(`${URL}/plans`);
+//     return response.body;
+// }
 
 export default class ToDosList extends Component {
     state = {
@@ -20,7 +20,7 @@ export default class ToDosList extends Component {
 
 
     componentDidMount = async () => {
-        const plans = await fetchPlans();
+        const plans = await getAllPlans(this.props.user.token);
         this.setState({ plans: plans });
     }
 

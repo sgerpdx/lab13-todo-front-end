@@ -11,10 +11,12 @@ export default class CreateToDo extends Component {
 
 
     handlePlanChange = (e) => {
-        const planState = { ...this.state.plan };
-        planState.todo = e.target.value;
-        planState.completed = false;
-        this.setState({ planState });
+        this.setState({
+            plan: {
+                todo: e.target.value,
+                completed: false,
+            }
+        });
     }
 
 
@@ -22,7 +24,7 @@ export default class CreateToDo extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         await makeToDo(this.state.plan, this.props.user.token);
-        this.props.history.push('/plans');
+        this.props.history.push('/api/plans');
     }
 
 

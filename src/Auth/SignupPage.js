@@ -22,7 +22,7 @@ export default class SignupPage extends React.Component {
         e.preventDefault();
         const user = await signupUser(this.state.email, this.state.password);
         this.props.handleUserChange(user); //this lets us pass the user/token 'up' to the parent (App)
-        this.props.history.push('/plans');
+        this.props.history.push('/api/plans');
     }
 
 

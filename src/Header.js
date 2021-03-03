@@ -19,7 +19,7 @@ export default class Header extends React.Component {
                 {
                     this.props.user && this.props.user.token &&
                     <>
-                        <NavLink exact activeClassName="selected" to="/plans">
+                        <NavLink exact activeClassName="selected" to="/api/plans">
                             <button className="navButton">Plans</button>
                         </NavLink>
                         <NavLink exact activeClassName="selected" to="/create">
@@ -45,7 +45,7 @@ export default class Header extends React.Component {
                 {
                     this.props.user && this.props.user.token &&
                     <>
-                        <NavLink exact activeClassName="selected" to="/plans">
+                        <NavLink exact activeClassName="selected" to="/api/plans">
                             <button onClick={this.props.handleLogout} className="navButton">Logout</button>
                         </NavLink>
                     </>
